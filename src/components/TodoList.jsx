@@ -1,6 +1,5 @@
 import { useContext } from "react"
-import { todoContext } from "../context/todoContext"
-import Popup from "./Popup";
+import { todoContext } from "../context/todoContext";
 
 export default function TodoList(){
 
