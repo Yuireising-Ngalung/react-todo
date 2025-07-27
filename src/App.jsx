@@ -9,7 +9,8 @@ function App() {
   const {theme} = useContext(todoContext);
 
   const themeStyle = {
-    backgroundColor: theme === 'light' ? '#fff' : '#333'
+    backgroundColor: theme === 'light' ? '#fff' : '#333',
+    minHeight: '100vh',
   }
 
   return (
