@@ -1,13 +1,21 @@
-import { useState } from 'react'
-import InputForm from './components/InputForm'
-import TodoList from './components/TodoList'
+import { useContext } from 'react';
+import InputForm from './components/InputForm';
+import ThemeToggle from './components/ThemeToggle';
+import TodoList from './components/TodoList';
+import { todoContext } from './context/todoContext';
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const {theme} = useContext(todoContext);
+
+  const themeStyle = {
+    backgroundColor: theme === 'light' ? '#fff' : '#333'
+  }
 
   return (
     <>
-      <section className='container my-5'>
+      <section className='container-fluid py-5' style={themeStyle}>
+        <ThemeToggle />
         <h1 className='text-center mb-5 text-info fw-bold'>TODO APP</h1>
         <InputForm />
         <TodoList />
